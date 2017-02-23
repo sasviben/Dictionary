@@ -111,7 +111,14 @@ namespace PrimjerDictionary
             }
                
             //provjeri da li kljuc vec postoji u dictionary-u
-
+            if(dictionaryCustomer.ContainsKey(10))
+            {
+                Customer cus = dictionaryCustomer[10];
+            }else
+            {
+                Console.WriteLine("Ključ ne postoji u dictionary-u!!!");
+            }
+                  
             //provjera da li postoji kljuc po kojemu pretrazujemo u dictionaryu. Ako ne postoji sto ce se desiti?
         }
     }
