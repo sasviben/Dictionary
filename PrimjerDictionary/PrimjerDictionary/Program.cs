@@ -51,7 +51,8 @@ namespace PrimjerDictionary
             Console.WriteLine("Customer1 u Dictionary-u");
             if(dictionaryCustomer.TryGetValue(10, out customer1))
             {
-                Console.WriteLine("ID = {0}, Ime = {1}, Placa = {2}", customer1.ID, customer1.Ime, customer1.Placa);
+                // Console.WriteLine("ID = {0}, Ime = {1}, Placa = {2}", customer1.ID, customer1.Ime, customer1.Placa);
+                Console.WriteLine($"ID={customer1.ID} Ime={customer1.Ime} Placa={customer1.Placa}");
             }
             Console.WriteLine("===============================================");
 
@@ -62,7 +63,8 @@ namespace PrimjerDictionary
             {
                 Console.WriteLine("Key=" + customerKVP.Key);
                 Customer cust = customerKVP.Value;
-                Console.WriteLine("ID={0} && Ime={1} && Placa={2}", cust.ID, cust.Ime, cust.Placa);
+                //Console.WriteLine("ID={0} && Ime={1} && Placa={2}", cust.ID, cust.Ime, cust.Placa);
+                Console.WriteLine($"ID={cust.ID} Ime={cust.Ime} Placa={cust.Placa}");
                 Console.WriteLine();
             }
             Console.WriteLine("==============================================");
@@ -73,7 +75,8 @@ namespace PrimjerDictionary
             {
                 Console.WriteLine("Key=" + customerKeyValueaPair.Key);
                 Customer cust2 = customerKeyValueaPair.Value;
-                Console.WriteLine("ID={0} && Ime={1} && Placa={2}", cust2.ID, cust2.Ime, cust2.Placa);
+                //Console.WriteLine("ID={0} && Ime={1} && Placa={2}", cust2.ID, cust2.Ime, cust2.Placa);
+                Console.WriteLine($"ID={cust2.ID} Ime={cust2.Ime} Placa={cust2.Placa}");
                 Console.WriteLine();
             }
             Console.WriteLine("==============================================");
@@ -94,7 +97,8 @@ namespace PrimjerDictionary
 
             foreach(Customer Customer in dictionaryCustomer.Values)
             {
-                Console.WriteLine("ID={0} && Ime={1} && Placa={2}", Customer.ID, Customer.Ime, Customer.Placa);
+               // Console.WriteLine("ID={0} && Ime={1} && Placa={2}", Customer.ID, Customer.Ime, Customer.Placa);
+                Console.WriteLine($"ID={Customer.ID} Ime={Customer.Ime} Placa={Customer.Placa}");
             }
             Console.WriteLine("==============================================");
 
@@ -118,8 +122,22 @@ namespace PrimjerDictionary
             {
                 Console.WriteLine("Ključ ne postoji u dictionary-u!!!");
             }
-                  
+            Console.WriteLine("==============================================");
             //provjera da li postoji kljuc po kojemu pretrazujemo u dictionaryu. Ako ne postoji sto ce se desiti?
+            if (dictionaryCustomer.ContainsKey(10))
+            {
+                try {
+                    Customer cust = dictionaryCustomer[10];
+                }
+                catch(KeyNotFoundException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Ključ ne postoji u dnevniku!!!");
+            }
         }
     }
 }
