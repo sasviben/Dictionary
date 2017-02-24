@@ -46,13 +46,17 @@ namespace PrimjerDictionary
             dictionaryCustomer.Add(customer1.ID, customer1);
             dictionaryCustomer.Add(customer2.ID, customer2);
             dictionaryCustomer.Add(customer3.ID, customer3);
-
+       
             //dohvati i ispisi vrijednost customer objekata iz dictionary-a koristeci kljuc (CustomerID). Najbrzi nacin dohvacanja vrijednosti iz dictionary-a je koristenjem kljuceva
             Console.WriteLine("Customer1 u Dictionary-u");
             if(dictionaryCustomer.TryGetValue(10, out customer1))
             {
                 // Console.WriteLine("ID = {0}, Ime = {1}, Placa = {2}", customer1.ID, customer1.Ime, customer1.Placa);
                 Console.WriteLine($"ID={customer1.ID} Ime={customer1.Ime} Placa={customer1.Placa}");
+            }
+            else
+            {
+                Console.WriteLine("Ključ nije nađen!");
             }
             Console.WriteLine("===============================================");
 
@@ -138,6 +142,12 @@ namespace PrimjerDictionary
             {
                 Console.WriteLine("Ključ ne postoji u dnevniku!!!");
             }
+
+            //count funkcija, kada zelimo naci broj objekata u dictionary-u
+
+            Console.WriteLine($"Ukupno objekata={dictionaryCustomer.Count()}");
+            Console.WriteLine($"Broj zaposlenih cija je placa veca od 5000 kn: {dictionaryCustomer.Count(kvp => kvp.Value.Placa > 6000)}");
+
         }
     }
 }
