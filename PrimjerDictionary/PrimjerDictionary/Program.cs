@@ -41,7 +41,21 @@ namespace PrimjerDictionary
                 Ime = "Hrvoje",
                 Placa = 15000
             };
+            Customer[] customers = new Customer[3];
+            customers[0] = customer1;
+            customers[1] = customer2;
+            customers[2] = customer3;
+            //Pretvorba niza u dictionary
+            Console.WriteLine("PRETVORBA NIZA U DICTIONARY");
 
+            Dictionary<int, Customer> dict = customers.ToDictionary(cust => cust.ID, cust => cust);
+            foreach(KeyValuePair<int, Customer>kvp in dict)
+            {
+                Console.WriteLine($"key={kvp.Key}");
+                Customer cus = kvp.Value;
+                Console.WriteLine($"ID={cus.ID} Ime={cus.Ime} Placa={cus.Placa}");
+            }
+            
             //Dodaj customer objekte u dictionary
             dictionaryCustomer.Add(customer1.ID, customer1);
             dictionaryCustomer.Add(customer2.ID, customer2);
@@ -149,8 +163,15 @@ namespace PrimjerDictionary
             Console.WriteLine($"Broj zaposlenih cija je placa veca od 5000 kn: {dictionaryCustomer.Count(kvp => kvp.Value.Placa > 6000)}");
 
             //Remove() metoda. kada zelimo ukloniti određeni objekt iz dictionary-a
-            dictionaryCustomer.Remove(10);
+          //  dictionaryCustomer.Remove(10);
             dictionaryCustomer.Remove(999);//nema izninmke, tj nece se nista desiti
+
+            //Clear() metoda, sluzi za uklanjanje svih objekata iz dictionary-a
+           // dictionaryCustomer.Clear();
+
+          
+
+            
         }
     }
 }
