@@ -55,6 +55,7 @@ namespace PrimjerDictionary
                 Customer cus = kvp.Value;
                 Console.WriteLine($"ID={cus.ID} Ime={cus.Ime} Placa={cus.Placa}");
             }
+            Console.WriteLine("===============================================");
             //Pretvorba liste u dictionary
             List<Customer> custom = new List<Customer>();
             custom.Add(customer1);
@@ -70,7 +71,7 @@ namespace PrimjerDictionary
                 Customer cus = kvp.Value;
                 Console.WriteLine($"ID={cus.ID} Ime={cus.Ime} Placa={cus.Placa}");
             }
-
+            Console.WriteLine("===============================================");
             //Dodaj customer objekte u dictionary
             dictionaryCustomer.Add(customer1.ID, customer1);
             dictionaryCustomer.Add(customer2.ID, customer2);
