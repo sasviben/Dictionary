@@ -143,11 +143,14 @@ namespace PrimjerDictionary
                 Console.WriteLine("Ključ ne postoji u dnevniku!!!");
             }
 
-            //count funkcija, kada zelimo naci broj objekata u dictionary-u
+            //count metoda, kada zelimo naci broj objekata u dictionary-u
 
             Console.WriteLine($"Ukupno objekata={dictionaryCustomer.Count()}");
             Console.WriteLine($"Broj zaposlenih cija je placa veca od 5000 kn: {dictionaryCustomer.Count(kvp => kvp.Value.Placa > 6000)}");
 
+            //Remove() metoda. kada zelimo ukloniti određeni objekt iz dictionary-a
+            dictionaryCustomer.Remove(10);
+            dictionaryCustomer.Remove(999);//nema izninmke, tj nece se nista desiti
         }
     }
 }
